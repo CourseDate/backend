@@ -14,8 +14,8 @@ const typeDefs = gql`
 
   type Activity {
     id: ID!
-    userId: Int!
-    classId: Int!
+    user: User!
+    class: Class!
     isLiked: Boolean!
     dateCreated: Date!
   }
