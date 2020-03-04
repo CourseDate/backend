@@ -2,7 +2,7 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
   type Query {
-    me: User
+    me: [Class]
   }
 
   type User {
@@ -20,15 +20,15 @@ const typeDefs = gql`
     dateCreated: Date!
   }
 
-  type Classes {
+  type Class {
     id: ID
-    classCode: String!
-    classNo: Int!
-    name: String!
-    description: String!
-    dept: String!
-    school: String!
-    prereqs: String!
+    classCode: String
+    classNo: Int
+    name: String
+    description: String
+    dept: String
+    school: String
+    prereqs: String
   }
 
   enum SchoolYear {

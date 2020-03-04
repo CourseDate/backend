@@ -3,17 +3,17 @@ const typeDefs = require("./schema");
 const resolvers = require("./resolver");
 const { createStore } = require('./utils');
 
-const UserAPI = require('./datasources/user');
+const ClassAPI = require('./data_sources/class');
 
 // creates a sequelize connection once. NOT for every request
 const store = createStore();
 
 // set up any dataSources our resolvers need
 const dataSources = () => ({
-  userAPI: new UserAPI({ store })
+  classAPI: new ClassAPI({ store })
 });
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ typeDefs, resolvers, dataSources });
 
 // test ur db connection
 // const Sequelize = require('sequelize');
